@@ -69,7 +69,7 @@ public class IndexWord implements DictionaryElement {
 	}
 
 	/**
-	 * Return the word's <it>lemma</it>.  Its lemma is its orthographic representation, for
+	 * Return the word's <i>lemma</i>.  Its lemma is its orthographic representation, for
 	 * example <code>"dog"</code> or <code>"get up"</code>.
 	 */
 	public String getLemma() {

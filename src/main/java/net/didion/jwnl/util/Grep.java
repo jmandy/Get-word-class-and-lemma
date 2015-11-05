@@ -142,7 +142,6 @@ public class Grep {
 
     /**
      * Search for occurrences in the given file of the offset, then find the appropriate lemma.
-     * @param f
      * @param synsetOffset
      * @return
      * @throws IOException
@@ -160,7 +159,6 @@ public class Grep {
 
     /**
      * Search for occurrences in the given file of the offset, then find the appropriate lemma.
-     * @param f
      * @param synsetOffset
      * @return
      * @throws IOException

@@ -13,8 +13,8 @@ import net.didion.jwnl.data.list.PointerTargetNodeList;
  * An asymmetric relationship is one whose source and target synsets have lineages with a definite divergence point.
  * The commonParentIndex is the index of the node in the relationship that represents this divergence point.
  * <p>
- * For example, in finding a hypernym  relationship between dog and cat, the relationship is dog -> canine ->
- * carnivore -> feline -> cat. The ancestry of "dog" and the ancestry of "cat" diverge at "carnivore," so
+ * For example, in finding a hypernym  relationship between dog and cat, the relationship is dog -&gt; canine -&gt;
+ * carnivore -&gt; feline -&gt; cat. The ancestry of "dog" and the ancestry of "cat" diverge at "carnivore," so
  * the common parent index is thus 2.
  */
 public class AsymmetricRelationship extends Relationship {

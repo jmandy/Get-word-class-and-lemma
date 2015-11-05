@@ -7,7 +7,7 @@ package net.didion.jwnl.data;
 import net.didion.jwnl.util.factory.Createable;
 
 /**
- * Factory class for creating <code>DictionaryElement</code>s (<code>Synset</code>s, <code>Exception</codes,
+ * Factory class for creating <code>DictionaryElement</code>s (<code>Synset</code>s, <code>Exception</code>s,
  * and <code>IndexWord</code>s). Using a factory class rather than individual parsing methods in each class
  * facilitates using multiple versions of WordNet, or using a propritary data format.
  */

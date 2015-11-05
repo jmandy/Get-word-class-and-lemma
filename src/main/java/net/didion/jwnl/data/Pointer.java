@@ -14,8 +14,8 @@ import java.io.Serializable;
 /**
  * A <code>Pointer</code> encodes a lexical or semantic relationship between WordNet entities.  A lexical
  * relationship holds between Words; a semantic relationship holds between Synsets.  Relationships
- * are <it>directional</it>:  the two roles of a relationship are the <it>source</it> and <it>target</it>.
- * Relationships are <it>typed</it>: the type of a relationship is a {@link PointerType}, and can
+ * are <i>directional</i>:  the two roles of a relationship are the <i>source</i> and <i>target</i>.
+ * Relationships are <i>typed</i>: the type of a relationship is a {@link PointerType}, and can
  * be retrieved via {@link Pointer#getType getType}. */
 public class Pointer implements Serializable {
 	static final long serialVersionUID = -1275571290466732179L;

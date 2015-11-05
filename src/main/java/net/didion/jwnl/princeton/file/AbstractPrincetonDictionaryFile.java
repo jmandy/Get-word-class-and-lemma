@@ -15,8 +15,8 @@ import java.util.Map;
 /**
  * <code>AbstractDictionaryFile</code> that uses file names compatible with Princeton's distribution of WordNet.
  * The filenames associated are:
- * WINDOWS: <noun, verb, adj, adv>.<idx, dat, exc>
- * MAC, UNIX: <index, data>.<noun, verb, adj, adv>, <noun, verb, adj, adv>.exc
+ * WINDOWS: &lt;noun, verb, adj, adv&gt;.&lt;idx, dat, exc&gt;
+ * MAC, UNIX: &lt;index, data&gt;.&lt;noun, verb, adj, adv&gt;, &lt;noun, verb, adj, adv&gt;.exc
  */
 public abstract class AbstractPrincetonDictionaryFile extends AbstractDictionaryFile {
 	private static final String NOUN_EXT = "noun";

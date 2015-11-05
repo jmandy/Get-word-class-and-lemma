@@ -3,7 +3,7 @@ package net.didion.jwnl.util.cache;
 import java.util.HashMap;
 import java.util.Map;
 
-/** A set of </code>Caches</code>, indexed by <code>CacheKey</code>. */
+/** A set of <code>Caches</code>, indexed by <code>CacheKey</code>. */
 public abstract class CacheSet {
 	public static final int DEFAULT_CACHE_CAPACITY = 1000;
 
@@ -14,8 +14,7 @@ public abstract class CacheSet {
 	}
 
 	public CacheSet(Object[] keys, int size) {
-		for (int i = 0; i < keys.length; i++)
-			addCache(keys[i], size);
+		for (Object key : keys) addCache(key, size);
 	}
 
 	public CacheSet(Object[] keys, int[] sizes) {

@@ -17,7 +17,7 @@ import java.util.BitSet;
  * synonymous with the other words in the <code>Synset</code>).
  * <p>
  * <code>Synset</code>'s are linked by {@link Pointer}s into a network of related
- * concepts; this is the <it>Net</it> in WordNet. {@link #getTargets getTargets}
+ * concepts; this is the <i>Net</i> in WordNet. {@link #getTargets getTargets}
  * retrieves the targets of these links, and {@link #getPointers getPointers}
  * retrieves the pointers themselves.
  */

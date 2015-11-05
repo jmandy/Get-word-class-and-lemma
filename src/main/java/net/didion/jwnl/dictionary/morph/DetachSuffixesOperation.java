@@ -16,7 +16,7 @@ import java.util.List;
  * This class accepts parameters in the form of:
  * <pre>
  *
- *  <param name="{part-of-speech}" value="|{suffix}={stemmed suffix}|..."/>
+ *  &lt;param name="{part-of-speech}" value="|{suffix}={stemmed suffix}|..."/&gt;
  *
  * </pre>
  * where suffix is the {suffix} to convert from, and {stemmed suffix} is
