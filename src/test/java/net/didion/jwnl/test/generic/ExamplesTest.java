@@ -8,7 +8,6 @@ import net.didion.jwnl.data.POS;
 import net.didion.jwnl.dictionary.Dictionary;
 
 public class ExamplesTest extends TestCase {
-
 	public void testMorphological() {
 		try {  
 			JWNL.initialize(TestDefaults.getInputStream());
@@ -19,8 +18,5 @@ public class ExamplesTest extends TestCase {
 		} catch (JWNLException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
-	
 }

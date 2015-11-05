@@ -42,7 +42,7 @@ public final class JWNL {
 	public static final String OS_PROPERTY_NAME = "os.name";
 
 	private static final String JAVA_VERSION_PROPERTY = "java.version";
-	private static final String CORE_RESOURCE = "JWNLResource";
+	private static final String CORE_RESOURCE = "JWNLResource_en";
 
 	// initialization stages
 	private static final int UNINITIALIZED = 0;
@@ -251,6 +251,7 @@ public final class JWNL {
 
 	/** Resolve <var>msg</var> in one of the resource bundles used by the system */
 	public static String resolveMessage(String msg) {
+		System.out.println("msg = " + msg);
 		return resolveMessage(msg, new Object[0]);
 	}
 

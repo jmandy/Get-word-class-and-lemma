@@ -12,19 +12,23 @@ public class ResourceBundleSet extends ResourceBundle {
 	private Locale _locale = Locale.getDefault();
 	private List _resources = new ArrayList();
 
+	// Constructor given a single resource
 	public ResourceBundleSet(String resource) {
 		addResource(resource);
 	}
 
+	// Constructor given an array of resources
 	public ResourceBundleSet(String[] resources) {
 		for (int i = 0; i < resources.length; i++)
 			addResource(resources[i]);
 	}
 
+	// add a single resource
 	public void addResource(String resource) {
 		_resources.add(resource);
 	}
 
+	// get the array of resources
 	public String[] getResources() {
 		return (String[])_resources.toArray(new String[_resources.size()]);
 	}
@@ -62,13 +66,13 @@ public class ResourceBundleSet extends ResourceBundle {
 				return false;
 			}
 
-
 			public Object nextElement() {
 				return _currentEnum.nextElement();
 			}
 		};
 	}
 
+	// Read a single resource
 	private ResourceBundle getBndl(String bundle) {
 		return ResourceBundle.getBundle(bundle, _locale);
 	}
