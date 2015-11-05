@@ -29,7 +29,7 @@ Now you can just add it as a maven dependency:
 ```
 And start loading the application (without the need to download WordNet or add any config files): 
 
-```
+```java 
 JWNL.initialize();
 IndexWord iw = Dictionary.getInstance().lookupIndexWord(POS.VERB, "running-away");
 ```
