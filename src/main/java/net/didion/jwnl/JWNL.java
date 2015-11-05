@@ -87,6 +87,11 @@ public final class JWNL {
 	private static final String PUBLISHER_ATTRIBUTE = "publisher";
 	private static final String NUMBER_ATTRIBUTE = "number";
 
+	/** Constructor with default parameters */
+	public static void initialize() throws JWNLException {
+		JWNL.initialize(TestDefaults.getInputStream());
+	}
+
 	/**
 	 * Parses a properties file and sets the ready state at various points. Initializes the 
 	 * various PointerType, Adjective, and VerbFrame necessary preprocessing items.

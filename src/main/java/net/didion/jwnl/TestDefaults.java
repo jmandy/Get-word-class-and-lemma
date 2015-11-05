@@ -1,4 +1,4 @@
-package net.didion.jwnl.test.generic;
+package net.didion.jwnl;
 
 import java.io.FileInputStream;
 import java.io.InputStream;

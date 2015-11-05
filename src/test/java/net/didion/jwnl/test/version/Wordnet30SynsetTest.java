@@ -8,7 +8,7 @@ import net.didion.jwnl.data.POS;
 import net.didion.jwnl.data.Synset;
 import net.didion.jwnl.data.Word;
 import net.didion.jwnl.dictionary.Dictionary;
-import net.didion.jwnl.test.generic.TestDefaults;
+import net.didion.jwnl.TestDefaults;
 
 public class Wordnet30SynsetTest extends TestCase {
 

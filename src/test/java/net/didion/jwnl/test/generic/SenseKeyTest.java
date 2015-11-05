@@ -2,6 +2,7 @@ package net.didion.jwnl.test.generic;
 
 import junit.framework.TestCase;
 import net.didion.jwnl.JWNL;
+import net.didion.jwnl.TestDefaults;
 import net.didion.jwnl.data.IndexWord;
 import net.didion.jwnl.data.POS;
 import net.didion.jwnl.data.Synset;
