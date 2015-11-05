@@ -11,7 +11,7 @@ The major reason for this refactoring was to make JWNL (and WordNet) a self-cont
 the need to define configuration or the need to download the WN. 
 
 Now you can just add it as a maven dependency: 
-```
+```xml 
 <repositories>
      <repository>
          <id>CogcompSoftware</id>
