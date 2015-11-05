@@ -15,7 +15,7 @@ public class TestDefaults {
     /**
      * The location of the configuration file. 
      */
-    public static String CONFIG_PATH = "/Users/i-danielk/ideaProjects/jwnl14-rc2/config/";
+    public static String CONFIG_PATH = "config/";
     
     /**
      * The name of the file configuration. 
