@@ -7,5 +7,32 @@ This is the refactored version of [JWNL](http://sourceforge.net/projects/jwordne
 - [Documentaion on the property file](doc/propertyFileConfiguration.md). 
 - [Documention on `DictionaryToDatabase`](doc/DictionaryToDatabase.md). 
 
-Outline of changes made 
-- Maven support 
+The major reason for this refactoring was to make JWNL (and WordNet) a self-contained maven dependency, without 
+the need to define configuration or the need to download the WN. 
+
+Now you can just add it as a maven dependency: 
+```
+<repositories>
+     <repository>
+         <id>CogcompSoftware</id>
+         <name>CogcompSoftware</name>
+         <url>http://cogcomp.cs.illinois.edu/m2repo/</url>
+     </repository>
+</repositories>
+<dependencies>
+    <dependency>
+     <groupId>edu.illinois.cs.cogcomp</groupId>
+     <artifactId>jwnl-prime</artifactId>
+     <version>1.0.0</version>
+    </dependency>
+ </dependencies>
+```
+And start loading the application (without the need to download WordNet or add any config files): 
+
+```
+JWNL.initialize();
+IndexWord iw = Dictionary.getInstance().lookupIndexWord(POS.VERB, "running-away");
+```
+
+Happy WordNet-ing! :) 
+
