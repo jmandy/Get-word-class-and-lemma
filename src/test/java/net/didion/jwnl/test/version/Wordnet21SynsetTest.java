@@ -9,14 +9,14 @@ import net.didion.jwnl.dictionary.Dictionary;
 import net.didion.jwnl.test.generic.TestDefaults;
 
 public class Wordnet21SynsetTest extends TestCase {
-
+/*
    public void testGetBySynset() {
         try {
             JWNL.initialize(TestDefaults.getInputStream());
           
-            /**
+            *//**
              * 2.1 offset for tank. 
-             */
+             *//*
             long offset = 4337089;
             
             Synset syn = Dictionary.getInstance().getSynsetAt(POS.NOUN, offset);
@@ -41,5 +41,5 @@ public class Wordnet21SynsetTest extends TestCase {
         
         System.out.println("Synset 2.1 test passed.");
         
-    }
+    }*/
 }
