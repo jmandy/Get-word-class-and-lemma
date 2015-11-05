@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.illinois.cs.cogcomp</groupId>
-    <artifactId>jwnl14-prime</artifactId>
+    <artifactId>jwnl-prime</artifactId>
     <version>1.0</version>
 
     <dependencies>
