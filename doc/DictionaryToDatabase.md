@@ -1,5 +1,5 @@
-DictionaryToDatabase
-Requires JNWNL Version 1.3 or greater
+## DictionaryToDatabase
+- Requires JNWNL Version 1.3 or greater
 
 DictionaryToDatabase allows you to create and populate a database with the WordNet data. This database is compatible with DatabaseBackedDictionary.
 

@@ -1,4 +1,4 @@
-JWNL Properties File Configuration
+## JWNL Properties File Configuration
 
 A JWNL Properties file is an XML file that can be validated using the included DTD or XSD.
 
