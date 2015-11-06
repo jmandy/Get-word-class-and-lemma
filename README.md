@@ -31,8 +31,18 @@ And start loading the application (without the need to download WordNet or add a
 
 ```java 
 JWNL.initialize();
-IndexWord iw = Dictionary.getInstance().lookupIndexWord(POS.VERB, "running-away");
+...
 ```
+
+Instead of doing this (the old way): 
+
+```java 
+InputStream stream = ClassLoader.getSystemResourceAsStream(propsFile);
+JWNL.initialize(stream);
+...
+```
+
+All other functionalities are untouched. 
 
 Happy WordNet-ing! :) 
 
