@@ -11,19 +11,16 @@ import net.didion.jwnl.TestDefaults;
 public class DatabaseIndexWordTest extends TestCase {
     
     public void testMySQLAccess() {
-    try {
-        
-    JWNL.initialize(TestDefaults.getInputStream());
-         
-    IndexWord iw = Dictionary.getInstance().getIndexWord(POS.NOUN, "tank");
-    
-    Synset[] senses = iw.getSenses();
-    assertTrue(senses.length > 0);
-   
-} catch(Exception e) {
-    fail("Exception in Database test caught.");
-    e.printStackTrace();
-}
+        try {
+            JWNL.initialize(TestDefaults.getInputStream());
+            IndexWord iw = Dictionary.getInstance().getIndexWord(POS.NOUN, "tank");
+
+            Synset[] senses = iw.getSenses();
+            assertTrue(senses.length > 0);
+        } catch(Exception e) {
+            fail("Exception in Database test caught.");
+            e.printStackTrace();
+        }
     }
 
 }
