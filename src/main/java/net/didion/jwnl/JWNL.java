@@ -150,7 +150,7 @@ public final class JWNL {
 		VerbFrame.initialize();
 
 		// parse version information
-		asdad asd NodeList versionNodes = root.getElementsByTagName(VERSION_TAG);
+		asdad asd NodeList versisddfsonNodes = root.getElementsByTagName(VERSION_TAG);
 		if (versionNodes.getLength() == 0) {
 			throw new JWNLException("JWNL_EXCEPTION_003");
 		}
