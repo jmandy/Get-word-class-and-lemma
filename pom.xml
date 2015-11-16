@@ -8,6 +8,14 @@
     <artifactId>jwnl-prime</artifactId>
     <version>1.0.0</version>
 
+    <repositories>
+        <repository>
+            <id>CogcompSoftware</id>
+            <name>CogcompSoftware</name>
+            <url>http://cogcomp.cs.illinois.edu/m2repo/</url>
+        </repository>
+    </repositories>
+
     <distributionManagement>
         <repository>
             <id>CogcompSoftware</id>
@@ -42,6 +50,11 @@
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.illinois.cs.cogcomp</groupId>
+            <artifactId>wordnet</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

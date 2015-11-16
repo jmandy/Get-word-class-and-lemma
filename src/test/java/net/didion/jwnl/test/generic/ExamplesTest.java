@@ -10,12 +10,12 @@ import net.didion.jwnl.dictionary.Dictionary;
 
 public class ExamplesTest extends TestCase {
 	public void testMorphological() {
-		try {  
+		try {
 			JWNL.initialize();
 			IndexWord iw = Dictionary.getInstance().lookupIndexWord(POS.VERB, "running-away");
-          
+
 			System.out.println("Index word : " + iw.toString());
-			
+
 		} catch (JWNLException e) {
 			e.printStackTrace();
 		}
