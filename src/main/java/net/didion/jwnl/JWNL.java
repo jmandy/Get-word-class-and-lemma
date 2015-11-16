@@ -89,7 +89,6 @@ public final class JWNL {
 
 	/** Constructor with default parameters */
 	public static void initialize() throws JWNLException {
-		copyAllResourcesToDisk();
 		JWNL.initialize(TestDefaults.getInputStream());
 	}
 
@@ -100,6 +99,8 @@ public final class JWNL {
 	 * @throws JWNLException various JWNL exceptions, depending on where this fails
 	 */
 	public static void initialize(InputStream propertiesStream) throws JWNLException {
+		copyAllResourcesToDisk();
+
 		checkInitialized(UNINITIALIZED);
 
 		_initStage = START;
