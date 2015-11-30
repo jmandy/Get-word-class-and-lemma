@@ -42,7 +42,9 @@ JWNL.initialize(stream);
 ...
 ```
 
-All other functionalities are untouched. 
+All other functionalities are untouched.
+
+If you want to see what kind of stuff can be done with WN, checkout [this exampe file](src/main/java/net/didion/jwnl/Examples.java)!
 
 Happy WordNet-ing! :) 
 
