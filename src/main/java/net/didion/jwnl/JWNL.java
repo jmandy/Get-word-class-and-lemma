@@ -4,8 +4,8 @@
  */
 package net.didion.jwnl;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -99,6 +99,8 @@ public final class JWNL {
 	 * @throws JWNLException various JWNL exceptions, depending on where this fails
 	 */
 	public static void initialize(InputStream propertiesStream) throws JWNLException {
+		copyAllResourcesToDisk();
+
 		checkInitialized(UNINITIALIZED);
 
 		_initStage = START;
@@ -174,6 +176,34 @@ public final class JWNL {
 		createElementFromNode(dictionaryNodeList.item(0)).install();
 
 		_initStage = INITIALIZED;
+	}
+
+	public static void copyAllResourcesToDisk() {
+		File theDir = new File("wordnet/dict/");
+		if (!theDir.exists())
+			theDir.mkdirs();
+
+		String[] resourceNames = new String[]{"adj.exc", "adv.exc", "cntlist", "cntlist.rev", "data.adj",
+				"data.adv", "data.noun", "data.verb", "frames.vrb", "index.adj", "index.adv",
+				"index.noun", "index.sense", "index.verb", "lexnames", "log.grind.3.0",
+				"noun.exc", "sentidx.vrb", "sents.vrb", "verb.exc", "verb.Framestext"};
+
+		for(String resource : resourceNames) {
+			URL resourceURL = JWNL.class.getResource("/dict/" + resource );
+			File output = new File("wordnet/dict/" + resource);
+			try {
+				InputStream is = resourceURL.openStream();
+				OutputStream os = new FileOutputStream(output);
+
+				byte[] buffer = new byte[2048];
+				int bytesRead = -1;
+				while ((bytesRead = is.read(buffer)) != -1) {
+					os.write(buffer, 0, bytesRead);
+				}
+			} catch (IOException exp) {
+				exp.printStackTrace();
+			}
+		}
 	}
 
 	private static void createResourceBundle() {
