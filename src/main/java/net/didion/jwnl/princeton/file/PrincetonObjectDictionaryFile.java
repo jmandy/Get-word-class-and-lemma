@@ -64,7 +64,7 @@ public class PrincetonObjectDictionaryFile extends AbstractPrincetonDictionaryFi
 	}
 
 	private void openInputStream() throws IOException {
-		_in = new ObjectInputStream(new FileInputStream(_file));
+		_in = new ObjectInputStream(PrincetonObjectDictionaryFile.class.getResourceAsStream(_file.getPath()));
 	}
 
 	public ObjectInputStream getInputStream() throws IOException {
@@ -94,6 +94,7 @@ public class PrincetonObjectDictionaryFile extends AbstractPrincetonDictionaryFi
 	}
 			
 	public void writeObject(Object obj) throws IOException {
+        openOutputStream();
 		if (isOpen() && canWrite()) {
             getOutputStream().writeObject(obj);
         } else {
@@ -110,7 +111,7 @@ public class PrincetonObjectDictionaryFile extends AbstractPrincetonDictionaryFi
 	 */
 	protected void openFile(File path) throws IOException {
 		_file = path;
-		if (!_file.exists()) {
+		if (!_file.exists() && PrincetonObjectDictionaryFile.class.getResource(path.getPath()) == null) {
 			_file.createNewFile();
 			openOutputStream();
 		} else {
