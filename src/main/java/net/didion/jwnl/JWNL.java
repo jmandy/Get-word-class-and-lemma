@@ -60,9 +60,8 @@ public final class JWNL {
 		createResourceBundle();
 		// set the OS
 		String os = System.getProperty(OS_PROPERTY_NAME);
-		for (int i = 0; i < DEFINED_OS_ARRAY.length; i++)
-			if (DEFINED_OS_ARRAY[i].matches(os))
-				_currentOS = DEFINED_OS_ARRAY[i];
+        for (OS aDEFINED_OS_ARRAY : DEFINED_OS_ARRAY)
+            if (aDEFINED_OS_ARRAY.matches(os)) _currentOS = aDEFINED_OS_ARRAY;
 	}
 
     /**
@@ -114,7 +113,7 @@ public final class JWNL {
 		}
 
 		// parse the properties file
-		Document doc = null;
+		Document doc;
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			factory.setValidating(false);
@@ -196,7 +195,7 @@ public final class JWNL {
 				OutputStream os = new FileOutputStream(output);
 
 				byte[] buffer = new byte[2048];
-				int bytesRead = -1;
+				int bytesRead;
 				while ((bytesRead = is.read(buffer)) != -1) {
 					os.write(buffer, 0, bytesRead);
 				}
@@ -224,7 +223,7 @@ public final class JWNL {
 				if (name == null && value == null) {
 					throw new JWNLException("JWNL_EXCEPTION_008");
 				} else {
-					Param param = null;
+					Param param;
 					if (value == null) {
 						param = new ParamList(name.toLowerCase(), getParams(n.getChildNodes()));
 					} else if (name == null) {
@@ -286,7 +285,6 @@ public final class JWNL {
 
 	/** Resolve <var>msg</var> in one of the resource bundles used by the system */
 	public static String resolveMessage(String msg) {
-		System.out.println("msg = " + msg);
 		return resolveMessage(msg, new Object[0]);
 	}
 
