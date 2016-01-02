@@ -49,7 +49,7 @@ public class TestDefaults {
     /**
      * The testing type. Currently either FILE, DB, or MAP.
      */
-    public static String testingType = TestDefaults.FILE;
+    public static String testingType = TestDefaults.MAP;
 
 
     /**
@@ -62,9 +62,9 @@ public class TestDefaults {
             if (testingType.equals(TestDefaults.FILE)) {
                 return TestDefaults.class.getResourceAsStream(CONFIG_PATH + FILE_CONFIG_NAME);
             } else if (testingType.equals(TestDefaults.DB)) {
-                return new FileInputStream(CONFIG_PATH + DATABASE_CONFIG_NAME);
+                return TestDefaults.class.getResourceAsStream(CONFIG_PATH + DATABASE_CONFIG_NAME);
             } else if (testingType.equals(TestDefaults.MAP)) {
-                return new FileInputStream(CONFIG_PATH + MAP_CONFIG_NAME);
+                return TestDefaults.class.getResourceAsStream(CONFIG_PATH + MAP_CONFIG_NAME);
             }
         } catch (Exception e) {
             e.printStackTrace();

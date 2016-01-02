@@ -40,7 +40,7 @@ public class DictionaryToMap
     public DictionaryToMap(String destDirectory, String propFile)
         throws JWNLException, IOException
     {
-        JWNL.initialize(new FileInputStream(propFile));
+        JWNL.initialize(DictionaryToMap.class.getResourceAsStream(propFile));
         _destFiles = new DictionaryCatalogSet(destDirectory, net.didion.jwnl.princeton.file.PrincetonObjectDictionaryFile.class);
     }
 
