@@ -37,7 +37,9 @@ public class Examples {
     private IndexWord FUNNY;
     private IndexWord DROLL;
     private IndexWord MEN;
+    private IndexWord WOMEN;
     private IndexWord GONE;
+    private IndexWord LED;
     private String MORPH_PHRASE = "running-away";
 
     public Examples() throws JWNLException {
@@ -47,12 +49,16 @@ public class Examples {
         FUNNY = Dictionary.getInstance().lookupIndexWord(POS.ADJECTIVE, "funny");
         DROLL = Dictionary.getInstance().lookupIndexWord(POS.ADJECTIVE, "droll");
         MEN = Dictionary.getInstance().lookupIndexWord(POS.NOUN, "men");
-        GONE = Dictionary.getInstance().lookupIndexWord(POS.ADJECTIVE, "gone");
+        WOMEN = Dictionary.getInstance().lookupIndexWord(POS.NOUN, "women");
+        GONE = Dictionary.getInstance().lookupIndexWord(POS.VERB, "gone");
+        LED = Dictionary.getInstance().lookupIndexWord(POS.VERB, "led");
     }
 
     public void go() throws JWNLException {
         showLemma(MEN);
         showLemma(GONE);
+        showLemma(WOMEN);
+        showLemma(LED);
         demonstrateMorphologicalAnalysis(MORPH_PHRASE);
         demonstrateListOperation(ACCOMPLISH);
         demonstrateTreeOperation(DOG);
