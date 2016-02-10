@@ -1,10 +1,8 @@
 package net.didion.jwnl;
 
-// exampels file, shamefully stollen from Mallet, under the package:
+// examples file, shamefully stolen from Mallet, under the package:
 // edu.umass.cs.mallet.base.util.resources.wn;
 
-import net.didion.jwnl.JWNL;
-import net.didion.jwnl.JWNLException;
 import net.didion.jwnl.data.IndexWord;
 import net.didion.jwnl.data.POS;
 import net.didion.jwnl.data.PointerType;
@@ -17,7 +15,6 @@ import net.didion.jwnl.data.relationship.RelationshipFinder;
 import net.didion.jwnl.data.relationship.RelationshipList;
 import net.didion.jwnl.dictionary.Dictionary;
 
-import java.io.FileInputStream;
 import java.util.Iterator;
 
 /** A class to demonstrate the functionality of the JWNL package. */
