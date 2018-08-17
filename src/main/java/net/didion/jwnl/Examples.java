@@ -1,5 +1,7 @@
 package net.didion.jwnl;
 
+import java.util.Iterator;
+
 // examples file, shamefully stolen from Mallet, under the package:
 // edu.umass.cs.mallet.base.util.resources.wn;
 
@@ -15,8 +17,6 @@ import net.didion.jwnl.data.relationship.RelationshipFinder;
 import net.didion.jwnl.data.relationship.RelationshipList;
 import net.didion.jwnl.dictionary.Dictionary;
 
-import java.util.Iterator;
-
 /** A class to demonstrate the functionality of the JWNL package. */
 public class Examples {
     public static void main(String[] args) {
@@ -25,6 +25,7 @@ public class Examples {
             // initialize JWNL (this must be done before JWNL can be used)
             JWNL.initialize();
             new Examples().go();
+            
         } catch (Exception ex) {
             ex.printStackTrace();
             System.exit(-1);
@@ -32,6 +33,10 @@ public class Examples {
     }
 
     private IndexWord ACCOMPLISH;
+    private IndexWord VERB;
+    private IndexWord ADJECTIVE;
+    private IndexWord ADVERB;
+    private IndexWord NOUN;
     private IndexWord DOG;
     private IndexWord CAT;
     private IndexWord FUNNY;
@@ -40,6 +45,7 @@ public class Examples {
     private IndexWord WOMEN;
     private IndexWord GONE;
     private IndexWord LED;
+    private IndexWord RUN;
     private String MORPH_PHRASE = "running-away";
 
     public Examples() throws JWNLException {
@@ -52,18 +58,31 @@ public class Examples {
         WOMEN = Dictionary.getInstance().lookupIndexWord(POS.NOUN, "women");
         GONE = Dictionary.getInstance().lookupIndexWord(POS.VERB, "gone");
         LED = Dictionary.getInstance().lookupIndexWord(POS.VERB, "led");
+        RUN = Dictionary.getInstance().lookupIndexWord(POS.VERB, "run");
+        
+        String word="interesting:)";
+        VERB = Dictionary.getInstance().lookupIndexWord(POS.VERB, word);
+        ADVERB= Dictionary.getInstance().lookupIndexWord(POS.ADVERB, word);
+        NOUN= Dictionary.getInstance().lookupIndexWord(POS.NOUN, word);
+        ADJECTIVE= Dictionary.getInstance().lookupIndexWord(POS.ADJECTIVE, word);
+        
     }
 
     public void go() throws JWNLException {
-        showLemma(MEN);
-        showLemma(GONE);
-        showLemma(WOMEN);
-        showLemma(LED);
-        demonstrateMorphologicalAnalysis(MORPH_PHRASE);
-        demonstrateListOperation(ACCOMPLISH);
-        demonstrateTreeOperation(DOG);
-        demonstrateAsymmetricRelationshipOperation(DOG, CAT);
-        demonstrateSymmetricRelationshipOperation(FUNNY, DROLL);
+       // showLemma(MEN);
+        showLemma(ADJECTIVE);
+       // showLemma(WOMEN);
+       // showLemma(LED);
+       // demonstrateMorphologicalAnalysis(MORPH_PHRASE);
+       // demonstrateListOperation(ACCOMPLISH);
+       // demonstrateTreeOperation(DOG);
+       // demonstrateAsymmetricRelationshipOperation(DOG, CAT);
+       // demonstrateSymmetricRelationshipOperation(FUNNY, DROLL);
+    	
+        //demonstrateTreeOperation2(VERB);
+        //demonstrateTreeOperation2(ADJECTIVE);
+        //demonstrateTreeOperation2(ADVERB);
+       // demonstrateTreeOperation2(NOUN);
     }
 
     private void showLemma(IndexWord word) {
@@ -93,6 +112,16 @@ public class Examples {
         System.out.println("Hyponyms of \"" + word.getLemma() + "\":");
         hyponyms.print();
     }
+   
+    private void demonstrateTreeOperation2(IndexWord word) throws JWNLException {
+        // Get the Synonym of the first sense of <var>word</var>
+        PointerTargetTree synonym = PointerUtils.getInstance().getSynonymTree(word.getSense(1), 1);
+        System.out.println("same words of \"" + word.getLemma() + "\":");
+        synonym.print();
+    }
+    
+    
+    
 
     private void demonstrateAsymmetricRelationshipOperation(IndexWord start, IndexWord end) throws JWNLException {
         // Try to find a relationship between the first sense of <var>start</var> and the first sense of <var>end</var>
